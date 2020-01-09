@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false,limit: '50mb' }));
 app.use(bodyParser.json({ limit: '50mb'}));//faz o parse das informacoes recebidas em json
 
 
-//inclui todas as rotas da pasta 'routes' em app
+//inclui todas as rotas da pasta 'routes' em app, e os arquivos da pasta utils
 consign().include('routes').include('utils').into(app);
 
 app.listen(port,ip,()=>{

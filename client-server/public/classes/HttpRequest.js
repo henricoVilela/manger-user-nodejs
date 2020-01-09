@@ -8,7 +8,7 @@ class HttpRequest{
             ajax.open(method.toUpperCase(),url);
 
             ajax.onerror = (e)=>{
-                reject(e);
+                reject(e);//Deu ruim
             };
 
             ajax.onload = (event)=>{
@@ -17,7 +17,7 @@ class HttpRequest{
                 try{
                     obj = JSON.parse(ajax.responseText);
                 }catch(e){
-                    reject(e);
+                    reject(e);//Deu ruim
                     console.error(e);
                 }
                
@@ -26,7 +26,7 @@ class HttpRequest{
             }; 
 
             ajax.setRequestHeader('Content-Type','application/json');
-            ajax.send(JSON.stringify(params));
+            ajax.send(JSON.stringify(params));//envia os dados do usuario caso seja informado
         });
 
     }

@@ -1,16 +1,16 @@
 class Fetch{
 
-    //metodo para as requisicoes http ao servidor Nodejs via Ajax
+    //metodo para as requisicoes http ao servidor Nodejs via Fetch
     static request(method, url, params = {}){
 
         return new Promise((resolve, reject)=>{ 
             let request;
             switch(method.toLowerCase()){
-                case 'get':
+                case 'get'://quando o metodo e GET nao enviado dados entao basta a url para a requisicao
                     request = url;
                 break;
 
-                default:
+                default://caso seja PUT, POST, DELETE é necessario enviar dados 
                         request = new Request(url,{
                         method,
                         body: JSON.stringify(params),
@@ -20,15 +20,15 @@ class Fetch{
                     });
             }
 
-
+            //O fecth usa promise para validar as requisicoes
             fetch(url).then(response=>{
                 response.json().then(json=>{
-                    resolve(json);
+                    resolve(json);//Deu certo
                 }).catch(e=>{
-                    reject(e);
+                    reject(e);//Deu ruim
                 });
             }).catch(e=>{
-                reject(e);
+                reject(e);//Deu ruim
             });
         });
 
