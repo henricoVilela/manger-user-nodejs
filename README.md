@@ -14,4 +14,6 @@ Para ajudar na criação/gerenciamento das rotas, direcionado cada requisição 
 - express-validator
 
 ## IMPORTANTE:
-Executar o comando *'npm install'* no diretorio do projeto para baixar e instalar todas as dependencias
+- Executar o comando *'npm install'* no diretorio do projeto para baixar e instalar todas as dependencias.
+- Abrir um terminal na pasta *'client-server'* e executar o comando *'npm start'*
+- Abiri um terminal na pasta *'restfull'* e executar o comando *'node index.js'*
